@@ -22,3 +22,11 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+month = int(sys.argv[1]) if len(sys.argv) > 1 else datetime.today().month
+year = int(sys.argv[2]) if len(sys.argv) > 2 and len(
+    sys.argv[2]) > 3 else datetime.today().year
+if month > 12:
+    print('Invalid month! Try to type month or/and year')
+else:
+    calendar.TextCalendar().prmonth(themonth=month, theyear=year)
